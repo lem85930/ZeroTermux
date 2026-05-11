@@ -50,6 +50,16 @@ public class ZTUserBean {
     private boolean mIsCustomVisibleTerminal;
     // 选择AI
     private boolean mIsCustomAi;
+    // 是否显示左/右侧背景图片
+    private boolean mIsBackMenuVisible;
+
+    public boolean isBackMenuVisible() {
+        return mIsBackMenuVisible;
+    }
+
+    public void setIsBackMenuVisible(boolean isBackMenuVisible) {
+        this.mIsBackMenuVisible = isBackMenuVisible;
+    }
 
     public boolean isCustomAi() {
         return mIsCustomAi;

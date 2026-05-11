@@ -1968,6 +1968,12 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
                 UUtils.writerFile("back/right.png", FileIOUtils.INSTANCE.getRightMenuBackFile());
                 UUtils.writerFile("back/info.txt", FileIOUtils.INSTANCE.getInfoMenuBackFile());
             }
+            showMenuBack();
+        });
+    }
+
+    private void showMenuBack() {
+        if (UserSetManage.Companion.get().getZTUserBean().isBackMenuVisible()) {
             UUtils.runOnUIThread(() -> {
                 // 设置左边菜单背景
                 Bitmap leftBitMap = BitmapUtils.getBitmap(FileIOUtils.INSTANCE.getLeftMenuBackFile());
@@ -1985,9 +1991,11 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
                 }
 
             });
-        });
+        } else {
+            mLayoutMenuAll.setBackgroundColor(getColor(R.color.color_2b2b2b));
+            mIncludeRightMenu.setBackgroundColor(getColor(R.color.color_2b2b2b));
+        }
     }
-
     private void writerMainMenuConfig(boolean cover) {
         File mainMenuXmlPathFile = FileIOUtils.INSTANCE.getMainMenuXmlPathFile();
         Locale systemLocale = getResources().getConfiguration().locale;
@@ -2181,6 +2189,9 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
             } else {
                 double_tishi.setVisibility(View.GONE);
             }
+        });
+        mBeautifySettingDialog.setOnMenuBackListener(() -> {
+            showMenuBack();
         });
         mBeautifySettingDialog.setFontColorChange(new BeautifySettingDialog.FontColorChange() {
             @Override

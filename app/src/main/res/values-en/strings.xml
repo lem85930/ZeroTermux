@@ -1348,4 +1348,7 @@ cd ~ &amp;&amp; pkg update -y \n
     <string name="ai_dialog_reset">Switch successful. Restart required for changes to take effect</string>
     <string name="ai_settings_other">Configure Other AI</string>
     <string name="ai_settings_other_summary">Configure other API_KEY and interface models</string>
+
+    <string name="back_menu_visible">Left/Right panel displays background image</string>
+    <string name="back_menu_visible_summary">You must ensure that the following path:\n~Ztinfo/menuBack/\ncontains left.png and right.png</string>
 </resources>

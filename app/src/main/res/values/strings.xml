@@ -1308,4 +1308,7 @@
     <string name="ai_dialog_reset">切换成功，需要重启生效</string>
     <string name="ai_settings_other">设置其他AI</string>
     <string name="ai_settings_other_summary">设置其他的 API_KEY 以及接口模型</string>
+
+    <string name="back_menu_visible">左/右栏目显示背景图片</string>
+    <string name="back_menu_visible_summary">你必须确保路径:\n~Ztinfo/menuBack/\n路径下有 left.png 以及 right.png</string>
 </resources>
