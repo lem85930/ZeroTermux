@@ -20,8 +20,9 @@ import com.example.xh_lib.utils.UUtils
 import com.termux.R
 import com.termux.zerocore.ai.deepseek.model.Config
 import com.termux.zerocore.ftp.utils.UserSetManage
+import com.termux.zerocore.settings.BaseTitleActivity
 
-class ZeroTermuxDeepSeekSettingsActivity : AppCompatActivity() {
+class ZeroTermuxDeepSeekSettingsActivity : BaseTitleActivity() {
     companion object {
         public val TAG = ZeroTermuxDeepSeekSettingsActivity::class.java.simpleName
     }
@@ -39,6 +40,7 @@ class ZeroTermuxDeepSeekSettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zero_termux_deep_seek_settings)
+        setBaseTitle(UUtils.getString(R.string.deepseek_settings_seepseek))
         initView()
         initStatus()
     }

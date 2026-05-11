@@ -30,9 +30,10 @@ import com.termux.zerocore.ai.llm.data.ChatDatabaseHelper
 import com.termux.zerocore.ai.llm.model.Config
 import com.termux.zerocore.ai.model.ProviderProfile
 import com.termux.zerocore.ftp.utils.UserSetManage
+import com.termux.zerocore.settings.BaseTitleActivity
 
 
-class ZeroTermuxLLMSettingsActivity : AppCompatActivity() {
+class ZeroTermuxLLMSettingsActivity : BaseTitleActivity() {
     companion object {
         public val TAG = ZeroTermuxLLMSettingsActivity::class.java.simpleName
     }
@@ -62,6 +63,7 @@ class ZeroTermuxLLMSettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zero_termux_llm_settings)
+        setBaseTitle(UUtils.getString(R.string.ai_settings_title))
         dbHelper = ChatDatabaseHelper(this)
         initView()
         initStatus()

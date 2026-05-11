@@ -14,7 +14,7 @@ import com.topjohnwu.superuser.Shell
 import com.zp.z_file.util.LogUtils
 import java.io.File
 
-class ZeroTermuxSettingsActivity : AppCompatActivity() {
+class ZeroTermuxSettingsActivity : BaseTitleActivity() {
 
     private val ztDownloadServicesSwitch by lazy {findViewById<SwitchCompat>(R.id.zt_download_services_switch)}
     private val ztDownloadServicesLl by lazy {findViewById<LinearLayout>(R.id.zt_download_services_ll)}
@@ -49,6 +49,7 @@ class ZeroTermuxSettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zero_termux_settings)
+        setBaseTitle(UUtils.getString(R.string.zt_settings))
         initView()
         initStatus()
     }

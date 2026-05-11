@@ -4,12 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.cardview.widget.CardView
+import com.example.xh_lib.utils.UUtils
 import com.termux.R
 import com.termux.app.activities.SettingsActivity
 import com.termux.zerocore.ai.activity.MainAiSettings
 import com.termux.zerocore.ai.deepseek.activity.ZeroTermuxDeepSeekSettingsActivity
 
-class ZtSettingsActivity : AppCompatActivity() {
+class ZtSettingsActivity : BaseTitleActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zt_settings)
@@ -31,6 +32,7 @@ class ZtSettingsActivity : AppCompatActivity() {
         findViewById<CardView>(R.id.install_card_view).setOnClickListener {
             startActivity(Intent(this, ZTInstallActivity::class.java))
         }
+        setBaseTitle(UUtils.getString(R.string.zt_settings))
 
     }
 }

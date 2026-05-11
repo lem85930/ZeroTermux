@@ -5,14 +5,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.example.xh_lib.utils.UUtils
 import com.termux.R
 import com.termux.app.TermuxService
 import com.termux.zerocore.ai.deepseek.activity.ZeroTermuxDeepSeekSettingsActivity
 import com.termux.zerocore.dialog.SwitchDialog
 import com.termux.zerocore.ftp.utils.UserSetManage
 import com.termux.zerocore.llm.activity.ZeroTermuxLLMSettingsActivity
+import com.termux.zerocore.settings.BaseTitleActivity
 
-class MainAiSettings : AppCompatActivity() {
+class MainAiSettings : BaseTitleActivity() {
 
     private val mDeepseekAiSwitch by lazy { findViewById<CardView>(R.id.deepseek_ai_switch) }
     private val mCustomAiSwitch by lazy { findViewById<CardView>(R.id.custom_ai_switch) }
@@ -23,6 +25,7 @@ class MainAiSettings : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zero_termux_ai_settings)
+        setBaseTitle(UUtils.getString(R.string.ai_settings))
         val ztUserBean = UserSetManage.get().getZTUserBean()
         // 设置当前默认AI
         switchAi(ztUserBean.isCustomAi)
