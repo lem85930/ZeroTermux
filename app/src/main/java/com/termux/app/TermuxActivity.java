@@ -108,6 +108,7 @@ import com.termux.view.TerminalView;
 import com.termux.view.TerminalViewClient;
 import com.termux.x11.MainActivity;
 import com.termux.zerocore.activity.EditTextActivity;
+import com.termux.zerocore.ai.llm.LLMTransitFragment;
 import com.termux.zerocore.background.FireworkView;
 import com.termux.zerocore.bean.EditPromptBean;
 import com.termux.zerocore.bean.ZDYDataBean;
@@ -121,8 +122,8 @@ import com.termux.zerocore.config.mainmenu.data.MainMenuCategoryData;
 import com.termux.zerocore.config.mainmenu.view.adapter.MainMenuAdapter;
 import com.termux.zerocore.config.other.ZTGitHubVersion;
 import com.termux.zerocore.config.ztcommand.config.XmlMenuConfig;
-import com.termux.zerocore.deepseek.DeepSeekTransitFragment;
-import com.termux.zerocore.deepseek.markdown.MarkDownAPI;
+import com.termux.zerocore.ai.deepseek.DeepSeekTransitFragment;
+import com.termux.zerocore.ai.deepseek.markdown.MarkDownAPI;
 import com.termux.zerocore.dialog.BeautifySettingDialog;
 import com.termux.zerocore.dialog.CommonCommandsDialog;
 import com.termux.zerocore.dialog.DownLoadDialogBoom;
@@ -140,7 +141,6 @@ import com.termux.zerocore.utils.BitmapUtils;
 import com.termux.zerocore.utils.FileHttpUtils;
 import com.termux.zerocore.utils.FileIOUtils;
 import com.termux.zerocore.utils.IsInstallCommand;
-import com.termux.zerocore.utils.MenuBackConfigUtils;
 import com.termux.zerocore.utils.PhoneUtils;
 import com.termux.zerocore.utils.SingletonCommunicationUtils;
 import com.termux.zerocore.utils.SmsUtils;
@@ -2111,9 +2111,16 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
                 break;
             case 1:
                 LogUtils.e(TAG, "fragmentManager switch DeepSeekTransitFragment. ");
-                DeepSeekTransitFragment deepSeekTransitFragment = DeepSeekTransitFragment.newInstance();
-                fragmentTransaction.replace(R.id.frame_file, deepSeekTransitFragment, "DeepSeekMainFragment")
-                    .commitAllowingStateLoss();
+                boolean isCustomAi = UserSetManage.Companion.get().getZTUserBean().isCustomAi();
+                if (isCustomAi) {
+                    LLMTransitFragment llmTransitFragment = LLMTransitFragment.newInstance();
+                    fragmentTransaction.replace(R.id.frame_file, llmTransitFragment, "LLMMainFragment")
+                        .commitAllowingStateLoss();
+                } else {
+                    DeepSeekTransitFragment deepSeekTransitFragment = DeepSeekTransitFragment.newInstance();
+                    fragmentTransaction.replace(R.id.frame_file, deepSeekTransitFragment, "DeepSeekMainFragment")
+                        .commitAllowingStateLoss();
+                }
                 LogUtils.e(TAG, "fragmentManager switch DeepSeekTransitFragment deno. ");
                 break;
         }

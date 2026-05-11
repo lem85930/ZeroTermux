@@ -43,6 +43,57 @@ public class ZTUserBean {
     // 是否写入过菜单背景
     private boolean isWriterMenuBack;
 
+    // LLM api Key (字段名保留，Gson序列化兼容)
+    private String mCustomApiKey;
+    // LLM url (字段名保留，Gson序列化兼容)
+    private String mCustomApiUrl;
+    private boolean mIsCustomVisibleTerminal;
+    // 选择AI
+    private boolean mIsCustomAi;
+
+    public boolean isCustomAi() {
+        return mIsCustomAi;
+    }
+
+    public void setCustomAi(boolean deepSeekAi) {
+        mIsCustomAi = deepSeekAi;
+    }
+
+    public boolean isIsCustomVisibleTerminal() {
+        return mIsCustomVisibleTerminal;
+    }
+
+    public void setIsCustomVisibleTerminal(boolean isCustomVisibleTerminal) {
+        this.mIsCustomVisibleTerminal = isCustomVisibleTerminal;
+    }
+
+    // 自定义AI系统提示语
+    private String mCustomSystemPrompt;
+
+    public String getCustomSystemPrompt() {
+        return mCustomSystemPrompt;
+    }
+
+    public void setCustomSystemPrompt(String customSystemPrompt) {
+        this.mCustomSystemPrompt = customSystemPrompt;
+    }
+
+    public String getCustomApiKey() {
+        return mCustomApiKey;
+    }
+
+    public void setCustomApiKey(String customApiKey) {
+        this.mCustomApiKey = customApiKey;
+    }
+
+    public String getCustomApiUrl() {
+        return mCustomApiUrl;
+    }
+
+    public void setCustomApiUrl(String customApiUrl) {
+        this.mCustomApiUrl = customApiUrl;
+    }
+
     public boolean isWriterMenuBack() {
         return isWriterMenuBack;
     }
