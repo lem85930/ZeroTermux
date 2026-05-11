@@ -76,10 +76,9 @@ public class DeepSeekTransitFragment extends Fragment {
                     .commitAllowingStateLoss();
                 break;
             case 1:
-                ChatFragment chatFragment = ChatFragment.newInstance();
-                chatFragment.setIntent(intent);
+                ChatFragment chatFragment = ChatFragment.newInstance(intent);
                 chatFragment.setDeepSeekTransitFragment(this);
-                fragmentTransaction.replace(R.id.frame_layout, ChatFragment.newInstance(), "ChatFragment")
+                fragmentTransaction.replace(R.id.frame_layout, chatFragment, "ChatFragment")
                     .commitAllowingStateLoss();
                 break;
         }

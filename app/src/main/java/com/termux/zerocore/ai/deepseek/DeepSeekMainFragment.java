@@ -97,6 +97,10 @@ public class DeepSeekMainFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         mDeepSeekTransitFragment = null;
-        adapter.release();
+        if (adapter != null) {
+            adapter.release();
+            adapter = null;
+        }
+        deepSeekMainFragment = null;
     }
 }
