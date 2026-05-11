@@ -36,17 +36,17 @@ import java.util.UUID;
 
 public class ChatFragment extends Fragment {
     private static final String TAG = ChatFragment.class.getSimpleName();
+    private static final String ARG_IS_NEW = "isNew";
+    private static final String ARG_SESSION_ID = "sessionId";
     private RecyclerView chatRecyclerView;
     private ImageView mCancel;
     private EditText messageInput;
     private TextView sendButton;
     private ChatSession currentSession;
     private View mView;
-    private Intent mIntent;
 
     private DeepSeekClient deepSeekClient = new DeepSeekClient();
     private List<RequestMessageItem> requestMessageItemList = new ArrayList<>();
-    private static ChatFragment chatFragment;
 
     private TextView testText;
 
@@ -61,17 +61,15 @@ public class ChatFragment extends Fragment {
 
     private boolean createS = false;
 
-    public static ChatFragment newInstance() {
-        if (chatFragment == null) {
-            synchronized (ChatFragment.class) {
-                if (chatFragment == null) {
-                    chatFragment = new ChatFragment();
-                }
-                return chatFragment;
-            }
-        } else {
-            return chatFragment;
+    public static ChatFragment newInstance(@Nullable Intent intent) {
+        ChatFragment chatFragment = new ChatFragment();
+        Bundle arguments = new Bundle();
+        if (intent != null) {
+            arguments.putBoolean(ARG_IS_NEW, intent.getBooleanExtra(ARG_IS_NEW, false));
+            arguments.putString(ARG_SESSION_ID, intent.getStringExtra(ARG_SESSION_ID));
         }
+        chatFragment.setArguments(arguments);
+        return chatFragment;
     }
 
     @Nullable
@@ -80,10 +78,6 @@ public class ChatFragment extends Fragment {
         mView = View.inflate(getContext(), R.layout.activity_chat, null);
         initView();
         return mView;
-    }
-
-    public void setIntent(Intent intent) {
-        this.mIntent = intent;
     }
 
     public void setDeepSeekTransitFragment(DeepSeekTransitFragment deepSeekTransitFragment) {
@@ -99,17 +93,22 @@ public class ChatFragment extends Fragment {
         sendButton = mView.findViewById(R.id.sendButton);
         testText = mView.findViewById(R.id.testText);
 
-        if (mIntent == null) {
-            LogUtils.e(TAG, "initView intent is null return.");
+        Bundle arguments = getArguments();
+        if (arguments == null) {
+            LogUtils.e(TAG, "initView arguments is null return.");
             return;
         }
 
-        boolean isNew = mIntent.getBooleanExtra("isNew", false);
+        boolean isNew = arguments.getBoolean(ARG_IS_NEW, false);
         if (isNew) {
             createS = true;
             sessionId = UUID.randomUUID().toString();
         } else {
-            sessionId = mIntent.getStringExtra("sessionId");
+            sessionId = arguments.getString(ARG_SESSION_ID);
+            if (sessionId == null || sessionId.isEmpty()) {
+                LogUtils.e(TAG, "initView sessionId is null return.");
+                return;
+            }
             messages.addAll(dbHelper.getMessagesForSession(sessionId));
         }
         mCancel.setOnClickListener(view -> {
@@ -257,7 +256,10 @@ public class ChatFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         mDeepSeekTransitFragment = null;
-        adapter.release();
+        if (adapter != null) {
+            adapter.release();
+            adapter = null;
+        }
     }
 
     // 获取终端助手提示语
