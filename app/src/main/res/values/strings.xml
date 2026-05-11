@@ -1262,7 +1262,7 @@
 
     <string name="ai_settings_main_deepseek">DeepSeek</string>
     <string name="ai_settings_main_other">自定义</string>
-    <string name="ai_settings_main_summary">默认选择的是DeepSeek,你可以使用选择自定义来重新定义你的AP地址\n需要注意，如果切换不同的主体AI，历史聊天记录将只能在对应的主体AI当中显示\n选择完成切换之后，你需要在底部选项当中进行设置你的AI具体内容</string>
+    <string name="ai_settings_main_summary">默认选择的是DeepSeek,你可以使用选择自定义来重新定义你的AI地址\n需要注意，如果切换不同的主体AI，历史聊天记录将只能在对应的主体AI当中显示\n选择完成切换之后，你需要在底部选项当中进行设置你的AI具体内容</string>
 
     <string name="ai_settings_custom">自定义 AI 接口</string>
     <string name="ai_settings_custom_summary">自定义你的AI链接口</string>
@@ -1306,4 +1306,6 @@
     <string name="ai_delete">删除</string>
 
     <string name="ai_dialog_reset">切换成功，需要重启生效</string>
+    <string name="ai_settings_other">设置其他AI</string>
+    <string name="ai_settings_other_summary">设置其他的 API_KEY 以及接口模型</string>
 </resources>

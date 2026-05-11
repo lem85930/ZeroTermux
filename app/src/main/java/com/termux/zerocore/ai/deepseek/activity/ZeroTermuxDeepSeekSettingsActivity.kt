@@ -16,8 +16,10 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
+import androidx.cardview.widget.CardView
 import com.example.xh_lib.utils.UUtils
 import com.termux.R
+import com.termux.zerocore.ai.activity.MainAiSettings
 import com.termux.zerocore.ai.deepseek.model.Config
 import com.termux.zerocore.ftp.utils.UserSetManage
 import com.termux.zerocore.settings.BaseTitleActivity
@@ -28,6 +30,7 @@ class ZeroTermuxDeepSeekSettingsActivity : BaseTitleActivity() {
     }
 
     private val mKeyClick by lazy { findViewById<EditText>(R.id.key_click) }
+    private val mAiOther by lazy { findViewById<CardView>(R.id.ai_other) }
     private val mDeepSeekEdit by lazy { findViewById<EditText>(R.id.deepseek_edit) }
     private val mKeyClickSummary by lazy { findViewById<TextView>(R.id.key_click_summary) }
     private val mDeepSeekKeySummary by lazy { findViewById<TextView>(R.id.deepseek_key_summary) }
@@ -138,6 +141,8 @@ class ZeroTermuxDeepSeekSettingsActivity : BaseTitleActivity() {
             })
         mDeepSeekKeySummary.movementMethod = LinkMovementMethod.getInstance()
         mKeyClickSummary.movementMethod = LinkMovementMethod.getInstance()
+        mAiOther.setOnClickListener { startActivity(Intent(this@ZeroTermuxDeepSeekSettingsActivity,
+            MainAiSettings::class.java)) }
     }
 
     private fun getKeyClickText(keyword: String, text: String, clickableSpan: ClickableSpan) :SpannableString {

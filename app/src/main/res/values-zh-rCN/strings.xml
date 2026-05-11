@@ -1308,6 +1308,58 @@
     <string name="deepseek_input_key_error_info_500">可能的问题:\n\n返回500，DeepSeek服务器内部故障，解决方法：请等待后重试。若问题一直存在，请联系DeepSeek解决。</string>
     <string name="deepseek_input_key_error_info_503">可能的问题:\n\n返回503，服务器负载过高，解决方法：请稍后重试您的请求。</string>
     <string name="deepseek_input_key_error_info_other">可能的问题:\n\n返回未能识别的code，服务器可能本次请求断开了？，解决方法：请稍后重试您的请求。</string>
+
+    <string name="ai_settings">设置 AI</string>
+    <string name="ai_settings_summary">设置具体要的AI接口，DeepSeek或者其他自定义AI路径</string>
+
+    <string name="ai_settings_main_deepseek">DeepSeek</string>
+    <string name="ai_settings_main_other">自定义</string>
+    <string name="ai_settings_main_summary">默认选择的是DeepSeek,你可以使用选择自定义来重新定义你的AI地址\n需要注意，如果切换不同的主体AI，历史聊天记录将只能在对应的主体AI当中显示\n选择完成切换之后，你需要在底部选项当中进行设置你的AI具体内容</string>
+
+    <string name="ai_settings_custom">自定义 AI 接口</string>
+    <string name="ai_settings_custom_summary">自定义你的AI链接口</string>
+
+    <string name="ai_custom_prompt">你是一个ZeroTermux助手，帮助使用ZeroTermux、Termux的用户来回答一些基础的 linux知识,所有的命令最好都使用一行如果有多行尽量使用&amp;&amp;来拼接为1行</string>
+
+    <string name="ai_custom_command">当前会话/终端文本:</string>
+
+    <!-- AI Provider System -->
+    <string name="ai_settings_title">AI 设置</string>
+    <string name="ai_provider_section">AI 提供者</string>
+    <string name="ai_provider_add">添加提供者</string>
+    <string name="ai_provider_edit">编辑提供者</string>
+    <string name="ai_provider_delete_confirm">确定要删除提供者 \"%s\" 吗？</string>
+    <string name="ai_provider_delete_last">无法删除最后一个提供者</string>
+    <string name="ai_provider_name">名称</string>
+    <string name="ai_provider_name_hint">例如: DeepSeek、OpenAI</string>
+    <string name="ai_provider_format">API 格式</string>
+    <string name="ai_provider_url">API 地址</string>
+    <string name="ai_provider_url_hint">https://api.example.com/v1/chat/completions</string>
+    <string name="ai_provider_key">API 密钥</string>
+    <string name="ai_provider_key_hint">输入你的 API 密钥</string>
+    <string name="ai_provider_model">模型名称</string>
+    <string name="ai_provider_model_hint">例如: deepseek-chat、gpt-4o</string>
+    <string name="ai_provider_name_required">请输入提供者名称</string>
+    <string name="ai_provider_url_required">请输入 API 地址</string>
+    <string name="ai_provider_model_required">请输入模型名称</string>
+    <string name="ai_provider_saved">提供者已保存</string>
+    <string name="ai_provider_deleted">提供者已删除</string>
+    <string name="ai_provider_default_badge">默认</string>
+    <string name="ai_provider_set_default">设为默认</string>
+    <string name="ai_provider_set_default_done">已设为默认</string>
+    <string name="ai_format_openai">OpenAI 兼容</string>
+    <string name="ai_format_claude">Anthropic Claude</string>
+    <string name="ai_format_gemini">Google Gemini</string>
+    <string name="ai_system_prompt_section">系统提示词</string>
+    <string name="ai_system_prompt_hint">输入自定义系统提示词...</string>
+    <string name="ai_chat_title">AI 助手</string>
+    <string name="ai_confirm">确定</string>
+    <string name="ai_cancel">取消</string>
+    <string name="ai_delete">删除</string>
+
+    <string name="ai_dialog_reset">切换成功，需要重启生效</string>
+    <string name="ai_settings_other">设置其他AI</string>
+    <string name="ai_settings_other_summary">设置其他的 API_KEY 以及接口模型</string>
 </resources>
 
 
