@@ -1351,4 +1351,41 @@ cd ~ &amp;&amp; pkg update -y \n
 
     <string name="back_menu_visible">Left/Right panel displays background image</string>
     <string name="back_menu_visible_summary">You must ensure that the following path:\n~Ztinfo/menuBack/\ncontains left.png and right.png</string>
+
+    <string name="guide_zerotermux_settings_agreement">ZeroTermux Terms of Use</string>
+    <string name="guide_zerotermux_previous">Back</string>
+    <string name="guide_zerotermux_next">Continue</string>
+    <string name="guide_zerotermux_usage_habits">Usage Habits</string>
+    <string name="guide_zerotermux_usage_habits_summary">Select your usage habits:\n
+         \n
+        Termux:\n
+        1. Double-tap and swipe to hide the toolbox\n
+        2. Volume up/down keys do not bring up the left/right menu bar\n
+        \n
+        ZeroTermux: \n
+        1. Double-tap and swipe to bring up the toolbox (may conflict with text zoom in/out)\n
+        2. Volume up/down keys bring up the left/right menu bar\n
+        \n
+        \n
+        If you need to change your usage habits later, you can adjust them by entering the settings from the left sidebar on the main screen.
+    </string>
+    <string name="guide_zerotermux_create_folder">Create Folder</string>
+    <string name="guide_zerotermux_create_folder_summary"> ZeroTermux needs to create the following folders in your internal storage\n\n
+        If you don\'t understand, just tap "Continue" \n\n
+        Suggestion: Under normal circumstances, please place them in internal storage. If placed in the Android/data directory, all saved data packages and all other data under the xinhao folder will be cleared after uninstalling the app. Please choose carefully.\n\n
+        Note: Setting to internal storage/Android/data may cause unknown issues. If you encounter any, please report them on GitHub.\n
+        Android specification (/internal storage/Android/data/com.termux/files/xinhao/)\n
+        Simple and easy to use (/internal storage/xinhao)\n\n
+        Directory description: data (backup packages), apk (temporary APKs), windows (QEMU directory),
+        command (command directory), font (font directory), iso (image directory), mysql (mysql temporary files),
+        online_system (offline termux packages), qemu (QEMU directory), server (server directory), share (share directory), web_config (web temporary directory)\n\n
+        If you need to change the directory later, you can modify it in ZeroTermux settings. Please note: the data in the two directories are displayed separately.
+    </string>
+    <string name="guide_zerotermux_create_sdcard">Internal Storage</string>
+    <string name="guide_zerotermux_create_android">Internal Storage/Android/data</string>
+    <string name="guide_zerotermux_create_toast_ok">Successfully created</string>
+    <string name="guide_zerotermux_create_toast_no">Creation failed, please check your permissions</string>
+    <string name="install_zerotermux_os_title">Install OS</string>
+    <string name="install_zerotermux_os_summary">ZeroTermux is installing the basic environment, please wait…</string>
+    <string name="loading_zerotermux">Loading ZeroTermux, please wait…</string>
 </resources>
