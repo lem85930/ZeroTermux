@@ -33,4 +33,8 @@ public open class BaseTitleActivity: AppCompatActivity() {
     public fun setBaseTitle(title: String) {
         mTitle!!.text = title
     }
+
+    public fun goneCancelButton() {
+        mCancel!!.visibility = View.GONE
+    }
 }

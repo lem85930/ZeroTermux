@@ -52,6 +52,26 @@ public class ZTUserBean {
     private boolean mIsCustomAi;
     // 是否显示左/右侧背景图片
     private boolean mIsBackMenuVisible;
+    // 是否在内部存储/Android/data创建文件
+    private boolean isCreateFolderForSdcardAndroid;
+    // 是否跳过引导页面
+    private boolean isJumpGuide;
+
+    public boolean isJumpGuide() {
+        return isJumpGuide;
+    }
+
+    public void setJumpGuide(boolean jumpGuide) {
+        isJumpGuide = jumpGuide;
+    }
+
+    public boolean isCreateFolderForSdcardAndroid() {
+        return isCreateFolderForSdcardAndroid;
+    }
+
+    public void setCreateFolderForSdcardAndroid(boolean createFolderForSdcard) {
+        isCreateFolderForSdcardAndroid = createFolderForSdcard;
+    }
 
     public boolean isBackMenuVisible() {
         return mIsBackMenuVisible;
