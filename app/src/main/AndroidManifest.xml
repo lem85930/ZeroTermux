@@ -164,7 +164,7 @@
             android:value="portrait|landscape" />
        <!-- ZeroTermux add {@-->
         <activity android:name=".zerocore.guide.TermuxGuideActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:theme="@style/GuideStyle"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
