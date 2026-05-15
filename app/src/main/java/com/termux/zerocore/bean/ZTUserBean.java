@@ -56,6 +56,16 @@ public class ZTUserBean {
     private boolean isCreateFolderForSdcardAndroid;
     // 是否跳过引导页面
     private boolean isJumpGuide;
+    // 双击终端功能
+    private int mDoubleClickFun;
+
+    public int getDoubleClickFun() {
+        return mDoubleClickFun;
+    }
+
+    public void setDoubleClickFun(int doubleClickFun) {
+        this.mDoubleClickFun = doubleClickFun;
+    }
 
     public boolean isJumpGuide() {
         return isJumpGuide;

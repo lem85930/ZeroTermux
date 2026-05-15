@@ -127,6 +127,7 @@ import com.termux.zerocore.ai.deepseek.markdown.MarkDownAPI;
 import com.termux.zerocore.dialog.BeautifySettingDialog;
 import com.termux.zerocore.dialog.CommonCommandsDialog;
 import com.termux.zerocore.dialog.DownLoadDialogBoom;
+import com.termux.zerocore.dialog.KeyWordFunDialog;
 import com.termux.zerocore.dialog.LoadingDialog;
 import com.termux.zerocore.dialog.ProtocolDialog;
 import com.termux.zerocore.dialog.SwitchDialog;
@@ -1526,8 +1527,19 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
             return;
         }
         BoomWindow.SWITCH = false;
-        hideKeyboard();
-        UUtils.getHandler().postDelayed(() -> showBoomDialog(), 100);
+        showDoubleClickFun();
+    }
+
+    private void showDoubleClickFun() {
+        int doubleClickFun = UserSetManage.Companion.get().getZTUserBean().getDoubleClickFun();
+        if (doubleClickFun == KeyWordFunDialog.DOUBLE_CLICK_CUSTOM_COMMAND) {
+            hideKeyboard();
+            UUtils.getHandler().postDelayed(() -> showBoomDialog(), 100);
+        } else if (doubleClickFun == KeyWordFunDialog.DOUBLE_CLICK_KEYWORD) {
+            showKeyBord();
+        } else if (doubleClickFun == KeyWordFunDialog.DOUBLE_CLICK_NOTHING) {
+            // 什么都不做
+        }
     }
 
     private void showBoomDialog() {

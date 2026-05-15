@@ -284,6 +284,8 @@ class TermuxGuideActivity: BaseTitleActivity() {
                         startGuideActivity(GUIDE_TERMUX_MAIN)
                     }
                 })
+        } else {
+            startGuideActivity(GUIDE_TERMUX_MAIN)
         }
     }
 }

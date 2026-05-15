@@ -1389,4 +1389,11 @@ cd ~ &amp;&amp; pkg update -y \n
     <string name="install_zerotermux_os_summary">ZeroTermux is installing the basic environment, please wait…</string>
     <string name="loading_zerotermux">Loading ZeroTermux, please wait…</string>
     <string name="guide_zerotermux_create_toast_created">The current feature is not available in this version, so wait for the next version to be tested online</string>
+
+    <string name="settings_keyword">Set double-tap function</string>
+    <string name="settings_keyword_summary">Set double-tap terminal function, choose Custom command, Keyboard, Disable</string>
+    <string name="settings_keyword_summary1">Current selection</string>
+    <string name="settings_keyword_item1">Keyboard</string>
+    <string name="settings_keyword_item2">Disable</string>
+    <string name="settings_keyword_item3">Custom command</string>
 </resources>
