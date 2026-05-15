@@ -1382,10 +1382,11 @@ cd ~ &amp;&amp; pkg update -y \n
         If you need to change the directory later, you can modify it in ZeroTermux settings. Please note: the data in the two directories are displayed separately.
     </string>
     <string name="guide_zerotermux_create_sdcard">Internal Storage</string>
-    <string name="guide_zerotermux_create_android">Internal Storage/Android/data</string>
+    <string name="guide_zerotermux_create_android">(NotAvailable)Internal Storage/Android/data</string>
     <string name="guide_zerotermux_create_toast_ok">Successfully created</string>
     <string name="guide_zerotermux_create_toast_no">Creation failed, please check your permissions</string>
     <string name="install_zerotermux_os_title">Install OS</string>
     <string name="install_zerotermux_os_summary">ZeroTermux is installing the basic environment, please wait…</string>
     <string name="loading_zerotermux">Loading ZeroTermux, please wait…</string>
+    <string name="guide_zerotermux_create_toast_created">The current feature is not available in this version, so wait for the next version to be tested online</string>
 </resources>

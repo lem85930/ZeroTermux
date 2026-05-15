@@ -1342,10 +1342,11 @@
         如果后期需要更改目录，可在 ZeroTermux 设置当中重新修改, 需注意：两个目录下的数据是分开显示的
     </string>
     <string name="guide_zerotermux_create_sdcard">内部存储</string>
-    <string name="guide_zerotermux_create_android">内部存储/Android/data</string>
+    <string name="guide_zerotermux_create_android">(不可用)内部存储/Android/data</string>
     <string name="guide_zerotermux_create_toast_ok">已成功创建</string>
     <string name="guide_zerotermux_create_toast_no">未创建成功,请检查你的权限情况</string>
     <string name="install_zerotermux_os_title">安装OS</string>
     <string name="install_zerotermux_os_summary">ZeroTermux 正在安装基础环境,请稍等…</string>
     <string name="loading_zerotermux">正在载入 ZeroTermux, 请稍后…</string>
+    <string name="guide_zerotermux_create_toast_created">当前功能在此版本不可用,等下个版本测试上线</string>
 </resources>

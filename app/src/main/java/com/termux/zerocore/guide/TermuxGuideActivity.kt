@@ -130,8 +130,8 @@ class TermuxGuideActivity: BaseTitleActivity() {
             }
             mNextCardView?.setOnClickListener {
                 // 具体功能需要后续完善
-               // startGuideActivity(GUIDE_CREATE_FOLDER)
-                startGuideActivity(GUIDE_TERMUX_MAIN)
+                startGuideActivity(GUIDE_CREATE_FOLDER)
+                //startGuideActivity(GUIDE_TERMUX_MAIN)
             }
         }
         if (getGuideCode() == GUIDE_CREATE_FOLDER) {
@@ -141,13 +141,16 @@ class TermuxGuideActivity: BaseTitleActivity() {
                 it.setOnClickListener { switchPath(false) }
             }
             mCreateFolderSdcardAndroid?.let {
-                it.setOnClickListener { switchPath(true) }
+                it.setOnClickListener {
+                    //switchPath(true)
+                    UUtils.showMsg(UUtils.getString(R.string.guide_zerotermux_create_toast_created))
+                }
             }
             mPreviousCardView?.setOnClickListener {
                 finish()
             }
             mNextCardView?.setOnClickListener {
-                startGuideActivity(GUIDE_TERMUX_MAIN)
+                createSdcardFiles()
             }
         }
     }
@@ -262,6 +265,7 @@ class TermuxGuideActivity: BaseTitleActivity() {
                         } else {
                             UUtils.showMsg(UUtils.getString(R.string.guide_zerotermux_create_toast_no))
                         }
+                        startGuideActivity(GUIDE_TERMUX_MAIN)
                     }
                     override fun onDenied(
                         permissions: MutableList<String?>?,
@@ -277,6 +281,7 @@ class TermuxGuideActivity: BaseTitleActivity() {
                         } else {
                             UUtils.showMsg(UUtils.getString(R.string.guide_zerotermux_create_toast_no))
                         }
+                        startGuideActivity(GUIDE_TERMUX_MAIN)
                     }
                 })
         }
